@@ -21,6 +21,8 @@ qqt8520/migu2026:1.0
 
 ## 夸克网盘免费扩容1TB：https://pan.quark.cn/s/24e7633bbfaf
 ## 交流社区：http://45.192.97.170:8103
+![图片1](https://raw.githubusercontent.com/5d5d5f5f5f/10102/main/9cf104d6331c5d2a05778a35bf6f1cfb.png
+)
 -----------------
 ## 不同文件夹JS访问：变量值说明
 【TXT M3U 同一个变量值】，
