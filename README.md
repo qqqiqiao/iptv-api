@@ -4,6 +4,8 @@
 ### JS 文件 运行环境选择：
 ### 【1】https://console.deno.com （点击开始 New Playground ）
 ### 【2】https://dash.cloudflare.com  (点击开始---- Workers 和 Pages---从 Hello World 开始 )
+## JS代码复制后：在worker代码编辑时键盘按下快捷键 ctrl+v  进行快速粘贴
+
 
 
 ## 【一键命令 
@@ -29,28 +31,7 @@ qqt8520/migu2026:1.0
 
 ## 夸克网盘免费扩容1TB：https://pan.quark.cn/s/24e7633bbfaf
 ## 交流社区：http://45.192.97.170:8103
-![图片1](https://raw.githubusercontent.com/5d5d5f5f5f/10102/main/9cf104d6331c5d2a05778a35bf6f1cfb.png
-)
------------------
-## 不同文件夹JS访问：变量值说明
-【TXT M3U 同一个变量值】，
-【mitv  独立变量值】，
-【合集  自定义变量值,仅OK影视APP使用】，
-【聚合搜索 （无需变量值）部署后访问worker域名即可】
-## 不同文件夹 'JS' 脚本部署后访问格式
-例如：https://域名/变量值
-示例：绑定的域名是 '123.com'  变量值是'abc123'
-访问地址是：https://123.com/abc123
------------------
-## Mitv 原代码库升级（无需重新部署），变量值已更换，最新变量值公众号获取，建议使用DIYP ku9 OK影视等等能自动刷新接口的软件
-
-## 聚合搜索 脚本升级 优化搜索速度  0516  0:25
-
------------------
-## 合集升级为可自定义设定变量 更新时间 05/12  12:35
-
 ## 0507 11:40 合集 安卓设备 OK壳专用订阅，其他软件用不了
-## JS代码复制后：在worker代码编辑时键盘按下快捷键 ctrl+v  进行快速粘贴
 安卓设备OK壳下载：
 ## TV版（横版）
 
@@ -68,31 +49,12 @@ qqt8520/migu2026:1.0
 [点击下载 TV版](https://tv1288.xyz/极致.apk)
 ---
 
-
-## TXT M3U   变量值公众号文章留言评论区自行查看获取
-
-
-🔄 为什么要定期更换？
-
-主要有以下几个原因：
-
-1️⃣ 防止资源被倒卖牟利
-如果链接长期固定，很容易被他人打包、二次售卖，甚至变成收费资源。
-
-2️⃣ 避免被恶意滥用或封禁
-固定链接一旦被大量传播或刷流量，很容易触发限制，导致全部用户无法使用。
-
-
 针对不同类型壳子订阅使用的格式，提供两种格式部署脚本
 ## TXT订阅格式请部署`TXT`
 ## M3U订阅格式请部署`m3u`
 ![图片1](https://raw.githubusercontent.com/5d5d5f5f5f/10102/main/10.jpg)
 ![图片2](https://raw.githubusercontent.com/5d5d5f5f5f/10102/main/11.jpg)
 ![图片3](https://raw.githubusercontent.com/5d5d5f5f5f/10102/main/12.jpg)
-# Cloudflare Worker 部署
-## Cloudflare注册地址 https://dash.cloudflare.com
-
-复制代码文件：`worker.js` 在Cloudflare 创建`Worker` 链接数据库自动更新订阅资源
 
 ---
 
