@@ -17,8 +17,8 @@ qqt8520/migu2026:1.0
 
 改成自己服务器：CCTV2,http://服务器IP:6001/631780532
 
-更多频道参考：https://raw.githubusercontent.com/5d5d5f5f5f/10102/refs/heads/main/0623.txt
-## ~~(已失效)免workers部署 ， 小白测试链接： https://2121.ccwu.cc~~
+更多频道参考：http://47.100.209.208:20002
+
 ## 聚合搜索 免workers部署 ， 小白测试链接： https://9810.ccwu.cc
 
 
