@@ -3,7 +3,7 @@
 ## 统一变量 方便管理 变量更换是防止有人倒卖 (变量更换无需重新部署JS脚本)
 ### JS 文件 运行环境选择：
 ### 【1】https://console.deno.com （点击开始 New Playground ）
-### 【2】https://dash.cloudflare.com(点击开始---- Workers 和 Pages---从 Hello World 开始 )
+### 【2】https://dash.cloudflare.com  (点击开始---- Workers 和 Pages---从 Hello World 开始 )
 
 
 ## 【一键命令 
