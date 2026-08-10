@@ -452,7 +452,7 @@ else
 
 
 
-read -p "请输入管理员密码(默认8520): " ADMIN_PASSWORD
+read -p "请输入管理员密码(默认123456): " ADMIN_PASSWORD
 
 
 
@@ -461,7 +461,7 @@ if [ -z "${ADMIN_PASSWORD}" ]
 then
 
 
-ADMIN_PASSWORD="8520"
+ADMIN_PASSWORD="123456"
 
 
 
