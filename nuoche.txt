@@ -4,9 +4,110 @@ set -e
 
 
 echo "======================================"
-echo " v1测试版"，安全隐私
-echo " 个人使用，禁止商用，"
-echo " 防止个人信息安全泄露"
+
+echo " 🚗 car-move v1.0.2 测试版"
+
+echo "复制本网页所有文本内容一键脚本服务器终端执行即可"
+
+echo "高德地图2个ker自行申请，代码中的域名https://map.tv1288.xyz更换成自己的域名"
+
+echo ""
+
+echo " ⚠️ 安全隐私说明："
+
+echo " 本项目仅供个人学习、测试及私人使用"
+
+echo " 禁止用于商业运营及未经授权的大规模部署"
+
+echo " 请勿上传、他人隐私信息"
+
+echo ""
+
+echo " 📌 使用前需要自行申请以下配置："
+
+echo ""
+
+echo " ① 高德地图开发者 Key"
+
+echo " 用于：地图显示、GPS定位、地址解析"
+
+echo ""
+
+echo " 高德开放平台："
+
+echo " https://lbs.amap.com"
+
+echo ""
+
+echo " 操作步骤："
+
+echo " 登录高德开发者平台"
+
+echo " → 创建应用"
+
+echo " → 创建 Web 端 Key"
+
+echo " → 创建 Web 服务 Key"
+
+echo " → 将 Key 填写到环境变量"
+
+echo ""
+
+echo "  PushPlus 微信通知 Token"
+
+echo " 用于：接收挪车提醒微信通知"
+
+echo ""
+
+echo " PushPlus个人中心："
+
+echo " https://www.pushplus.plus/uc-dev.html"
+
+echo ""
+
+echo " 操作步骤："
+
+echo " 注册 PushPlus 账号"
+
+echo " → 微信绑定"
+
+echo " → 进入开发者设置"
+
+echo " → 获取个人用户 Token"
+
+echo " → 填入 环境变量"
+
+echo ""
+
+echo " 需要设置变量："
+
+echo " 高德地图 Web端(JS API) Key"
+
+echo " 高德地图 Web服务 Key"
+
+echo " 高德地图安全密钥"
+
+echo " PUSHPLUS_TOKEN"
+
+
+echo ""
+
+
+echo "信息通知可多选：电报机器人/邮箱/PushPlus微信通知"
+
+
+echo ""
+
+echo ""
+
+echo "======================================"
+
+echo " 🚗 car-move-worker"
+
+echo " 个人免费版测试完成"
+
+echo " 请合理使用，保护个人隐私"
+
 echo "======================================"
 
 
@@ -14,7 +115,7 @@ APP_NAME="car-move"
 
 APP_DIR="/opt/car-move"
 
-PORT=5000
+PORT=5008
 
 PUBLIC_URL="https://map.tv1288.xyz"
 
@@ -112,7 +213,7 @@ RUN npm install --production
 COPY . .
 
 
-EXPOSE 5000
+EXPOSE 5008
 
 
 CMD ["npm","start"]
@@ -156,7 +257,7 @@ echo "生成初始环境配置..."
 
 cat > .env <<EOF
 
-PORT=5000
+PORT=5008
 
 
 PUBLIC_URL=${PUBLIC_URL}
@@ -183,9 +284,9 @@ EMAIL_PASS=
 
 EMAIL_TO=
 
+PUSHPLUS_TOKEN=
 
-
-ADMIN_PASS=123456
+ADMIN_PASS=8520
 
 
 EOF
@@ -230,7 +331,7 @@ const app=express();
 
 
 
-const PORT=process.env.PORT || 5000;
+const PORT=process.env.PORT || 5008;
 
 
 
@@ -631,7 +732,33 @@ e.message
 
 }
 
+async function sendPushPlus(text){
 
+if(!process.env.PUSHPLUS_TOKEN){
+    return;
+}
+
+try{
+
+await axios.post(
+"https://www.pushplus.plus/send",
+{
+token:process.env.PUSHPLUS_TOKEN,
+title:"🚗 新挪车提醒",
+content:text,
+template:"html"
+});
+
+}catch(e){
+
+console.log(
+"PushPlus失败:",
+e.message
+);
+
+}
+
+}
 
 
 
@@ -891,7 +1018,7 @@ sendTelegram(text);
 
 sendEmail(text);
 
-
+sendPushPlus(text);
 
 
 
@@ -2381,11 +2508,11 @@ font-size:18px;
 </h2>
 
 
-<p style="text-align:center;color:#666">
+<p3 style="text-align:center;color:#666">
 
-扫码定位，请勿重复提交
+个人使用 禁止商用
 
-</p>
+</p3>
 
 
 
@@ -3309,13 +3436,13 @@ echo "======================================"
 
 
 
-read -p "高德 JS Key: " AMAP_JS_KEY
+read -p "请输入高德地图 Web端(JS API) Key: " AMAP_JS_KEY
 
 
-read -p "高德 Web Key: " AMAP_WEB_KEY
+read -p "请输入高德地图 Web服务 Key: " AMAP_WEB_KEY
 
 
-read -p "高德安全密钥: " AMAP_SECURITY_KEY
+read -p "请输入高德地图安全密钥: " AMAP_SECURITY_KEY
 
 
 
@@ -3335,14 +3462,14 @@ read -p "邮箱SMTP授权码: " EMAIL_PASS
 read -p "接收通知邮箱: " EMAIL_TO
 
 
-
+read -p "PushPlus 用户token(没有默认回车): " PUSHPLUS_TOKEN
 
 
 
 cat > .env <<EOF
 
 
-PORT=5000
+PORT=5008
 
 
 PUBLIC_URL=https://map.tv1288.xyz
@@ -3374,9 +3501,9 @@ EMAIL_PASS=${EMAIL_PASS}
 
 EMAIL_TO=${EMAIL_TO}
 
+PUSHPLUS_TOKEN=${PUSHPLUS_TOKEN}
 
-
-ADMIN_PASS=123456
+ADMIN_PASS=8520
 
 
 
@@ -3432,7 +3559,7 @@ docker rm -f car-move 2>/dev/null || true
 docker run -d \
 --name car-move \
 --restart always \
--p 5000:5000 \
+-p 5008:5008 \
 --env-file .env \
 -v /opt/car-move/data:/app/data \
 car-move:v1.4.4
